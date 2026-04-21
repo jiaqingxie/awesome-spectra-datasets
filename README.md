@@ -19,6 +19,45 @@ This repository prioritizes:
 - NMR
 - MS / MS-MS
 
+## Dataset Index
+
+Priority rule:
+
+- Prefer a direct dataset/database link
+- If there is no stable dataset landing page, use the paper link
+- Keep benchmark datasets and legacy databases together, but label them clearly
+
+| Dataset | IR | Raman | UV-Vis | NMR | MS / MS-MS | Type | Dataset Link | Paper / Reference |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| SDBS | ✓ | ✓ |  | ✓ | ✓ | Experimental database | [SDBS](https://sdbs.db.aist.go.jp/) | [Introduction](https://sdbs.db.aist.go.jp/Htmls/Introduction_eng.html) |
+| NIST Chemistry WebBook | ✓ |  | ✓ |  | ✓ | Experimental database | [WebBook Chemistry](https://webbook.nist.gov/chemistry/) | [WebBook](https://webbook.nist.gov/) |
+| nmrshiftdb2 |  |  |  | ✓ |  | Mixed database | [nmrshiftdb2](https://nmrshiftdb.nmr.uni-koeln.de/nmrshiftdb/) |  |
+| HMDB |  |  |  | ✓ | ✓ | Mixed database | [HMDB databases](https://hmdb.ca/w/databases) |  |
+| BMRB small molecules |  |  |  | ✓ |  | Experimental database | [BMRB small molecules](https://bmrb.io/data_library/small_molecules.shtml) | [Metabolomics standards](https://bmrb.io/metabolomics/metabolomics_standards.php) |
+| MassBank |  |  |  |  | ✓ | Experimental database | [MassBank](https://massbank.eu/MassBank/) | [NAR 2025](https://academic.oup.com/nar/advance-article-abstract/doi/10.1093/nar/gkaf1193/8321203) |
+| MoNA |  |  |  |  | ✓ | Aggregated database | [MoNA](https://mona.fiehnlab.ucdavis.edu/) | [MANA databases](https://www.metabolomicsna.org/mana-databases) |
+| GNPS Public Libraries |  |  |  |  | ✓ | Experimental library | [GNPS Libraries](https://gnps.ucsd.edu/ProteoSAFe/libraries.jsp) |  |
+| QM9S | ✓ | ✓ | ✓ |  |  | Computational benchmark | [QM9S dataset](https://figshare.com/articles/dataset/QM9S_dataset/24235333) | [Nat Comput Sci 2023](https://www.nature.com/articles/s43588-023-00550-y) |
+| QMe14S | ✓ | ✓ |  | ✓ |  | Computational benchmark |  | [JPC Letters 2025](https://pubs.acs.org/doi/10.1021/acs.jpclett.5c00839) |
+| QM9NMR |  |  |  | ✓ |  | Computational benchmark | [QM9NMR](https://moldis-group.github.io/qm9nmr/) |  |
+| ChEMBL IR/Raman extension | ✓ | ✓ |  |  |  | Computational dataset |  | [Scientific Data 2025](https://www.nature.com/articles/s41597-025-05289-x) |
+| ORNL_AISD-Ex / GDB-9-Ex |  |  | ✓ |  |  | Computational dataset |  | [Scientific Data 2023](https://www.nature.com/articles/s41597-023-02408-4) |
+| API Raman dataset |  | ✓ |  |  |  | Experimental dataset |  | [Scientific Data 2025](https://www.nature.com/articles/s41597-025-04848-6) |
+| UV/Vis comparative dataset |  |  | ✓ |  |  | Mixed dataset |  | [Scientific Data 2019](https://www.nature.com/articles/s41597-019-0306-0) |
+
+## Paired IR-Raman Datasets
+
+For public small-molecule datasets where the same molecule is explicitly associated with both `IR` and `Raman`, the main benchmark-style resources are:
+
+| Dataset | IR | Raman | Other Modalities | Link |
+| --- | --- | --- | --- | --- |
+| QM9S | ✓ | ✓ | UV-Vis | [QM9S dataset](https://figshare.com/articles/dataset/QM9S_dataset/24235333) |
+| QMe14S | ✓ | ✓ | NMR | [JPC Letters 2025](https://pubs.acs.org/doi/10.1021/acs.jpclett.5c00839) |
+| ChEMBL IR/Raman extension | ✓ | ✓ |  | [Scientific Data 2025](https://www.nature.com/articles/s41597-025-05289-x) |
+| SDBS | ✓ | ✓ | NMR, EI-MS | [SDBS](https://sdbs.db.aist.go.jp/) |
+
+The first three are the clearest modern ML-style paired `IR + Raman` resources. `SDBS` is also useful, but it is better viewed as a legacy spectral database than a pre-packaged benchmark dataset.
+
 ## Current Core Resources
 
 | Resource | Modalities | Type | Notes |
