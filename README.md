@@ -31,9 +31,11 @@ Priority rule:
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | SDBS | ✓ | ✓ |  | ✓ | ✓ | Experimental database | [SDBS](https://sdbs.db.aist.go.jp/) | [Introduction](https://sdbs.db.aist.go.jp/Htmls/Introduction_eng.html) |
 | NIST Chemistry WebBook | ✓ |  | ✓ |  | ✓ | Experimental database | [WebBook Chemistry](https://webbook.nist.gov/chemistry/) | [WebBook](https://webbook.nist.gov/) |
+| NIST Quantitative IR Database | ✓ |  |  |  |  | Experimental database | [Quantitative IR Database](https://webbook.nist.gov/chemistry/quant-ir/) | [NIST SRD 79](https://www.nist.gov/mml/csd/chemical-process-and-nuclear-measurements/nist-srd-79-quantitative-infrared-database) |
 | nmrshiftdb2 |  |  |  | ✓ |  | Mixed database | [nmrshiftdb2](https://nmrshiftdb.nmr.uni-koeln.de/nmrshiftdb/) |  |
 | HMDB |  |  |  | ✓ | ✓ | Mixed database | [HMDB databases](https://hmdb.ca/w/databases) |  |
 | BMRB small molecules |  |  |  | ✓ |  | Experimental database | [BMRB small molecules](https://bmrb.io/data_library/small_molecules.shtml) | [Metabolomics standards](https://bmrb.io/metabolomics/metabolomics_standards.php) |
+| NP-MRD |  |  |  | ✓ |  | Mixed database | [NP-MRD](https://np-mrd.org) | [NAR 2025 update](https://pubmed.ncbi.nlm.nih.gov/39574402/) |
 | MassBank |  |  |  |  | ✓ | Experimental database | [MassBank](https://massbank.eu/MassBank/) | [NAR 2025](https://academic.oup.com/nar/advance-article-abstract/doi/10.1093/nar/gkaf1193/8321203) |
 | MoNA |  |  |  |  | ✓ | Aggregated database | [MoNA](https://mona.fiehnlab.ucdavis.edu/) | [MANA databases](https://www.metabolomicsna.org/mana-databases) |
 | GNPS Public Libraries |  |  |  |  | ✓ | Experimental library | [GNPS Libraries](https://gnps.ucsd.edu/ProteoSAFe/libraries.jsp) |  |
@@ -41,9 +43,13 @@ Priority rule:
 | QMe14S | ✓ | ✓ |  | ✓ |  | Computational benchmark |  | [JPC Letters 2025](https://pubs.acs.org/doi/10.1021/acs.jpclett.5c00839) |
 | QM9NMR |  |  |  | ✓ |  | Computational benchmark | [QM9NMR](https://moldis-group.github.io/qm9nmr/) |  |
 | ChEMBL IR/Raman extension | ✓ | ✓ |  |  |  | Computational dataset |  | [Scientific Data 2025](https://www.nature.com/articles/s41597-025-05289-x) |
+| SQuIRL | ✓ |  |  |  |  | Computational dataset |  | [Scientific Data 2026](https://www.nature.com/articles/s41597-026-07240-0) |
+| IR-NMR multimodal 177K | ✓ |  |  | ✓ |  | Computational dataset | [Zenodo](https://zenodo.org/records/15669242) | [Scientific Data 2025](https://www.nature.com/articles/s41597-025-05729-8) |
 | ORNL_AISD-Ex / GDB-9-Ex |  |  | ✓ |  |  | Computational dataset |  | [Scientific Data 2023](https://www.nature.com/articles/s41597-023-02408-4) |
 | API Raman dataset |  | ✓ |  |  |  | Experimental dataset |  | [Scientific Data 2025](https://www.nature.com/articles/s41597-025-04848-6) |
 | UV/Vis comparative dataset |  |  | ✓ |  |  | Mixed dataset |  | [Scientific Data 2019](https://www.nature.com/articles/s41597-019-0306-0) |
+| NMRexp |  |  |  | ✓ |  | Experimental dataset |  | [Scientific Data 2025](https://www.nature.com/articles/s41597-025-06245-5) |
+| 2DNMRGym |  |  |  | ✓ |  | Experimental dataset | [Hugging Face](https://huggingface.co/datasets/siriusxiao/2DNMRGym) | [arXiv 2025](https://arxiv.org/abs/2505.18181) |
 
 ## Paired IR-Raman Datasets
 
@@ -64,9 +70,11 @@ The first three are the clearest modern ML-style paired `IR + Raman` resources. 
 | --- | --- | --- | --- |
 | SDBS | IR, Raman, 1H NMR, 13C NMR, EI-MS | Experimental | Classic multi-modal organic compound database |
 | NIST Chemistry WebBook | IR, MS, UV-Vis | Experimental | Strong baseline for small-molecule lookup |
+| NIST Quantitative IR Database | IR | Experimental | Small but high-quality quantitative gas-phase IR set |
 | nmrshiftdb2 | 1H NMR, 13C NMR | Mixed | Open NMR database for organic small molecules |
 | HMDB | NMR, MS/MS, GC-MS | Mixed | Very important for metabolites and bio-related small molecules |
 | BMRB small molecules | NMR | Experimental | Includes peak lists and raw NMR data |
+| NP-MRD | 1H NMR, 13C NMR, 2D NMR | Mixed | Very large natural-product and bio-derived NMR resource |
 | MassBank | MS/MS | Experimental | Open FAIR reference spectral database |
 | MoNA | MS/MS, GC-MS | Aggregated | Large-scale mass spectral aggregation resource |
 | GNPS Public Libraries | MS/MS | Experimental | Strong for natural products and community workflows |
@@ -74,7 +82,11 @@ The first three are the clearest modern ML-style paired `IR + Raman` resources. 
 | QMe14S | IR, Raman, NMR | Computational | Expanded spectral benchmark with 14 elements and broader functional-group coverage |
 | QM9NMR | NMR | Computational | Large atom-resolved NMR shielding dataset for QM9 molecules |
 | ChEMBL IR/Raman extension | IR, Raman | Computational | Large-scale computed spectra for ML |
+| SQuIRL | IR | Computational | New 2026 computed IR library on 133,885 molecules |
+| IR-NMR multimodal 177K | IR, NMR | Computational | Large paired IR/NMR computational dataset from patent-derived molecules |
 | ORNL_AISD-Ex / GDB-9-Ex | UV-Vis | Computational | Large excited-state UV-Vis datasets |
+| NMRexp | 1H, 13C, 19F, 31P, 29Si, 11B NMR | Experimental | 3.3M experimental NMR records extracted from literature SI |
+| 2DNMRGym | 2D HSQC NMR | Experimental | 22K annotated HSQC benchmark for ML |
 
 ## Files
 
@@ -98,6 +110,8 @@ These are especially useful for ML benchmarking and should be tracked separately
 | QM9S | IR, Raman, UV-Vis | Based on QM9; strong baseline for structure-to-spectrum learning |
 | QMe14S | IR, Raman, NMR | Broader chemistry than QM9S with 14 elements and 47 functional groups |
 | QM9NMR | NMR shielding | Atom-level NMR benchmark across 130k+ QM9 molecules |
+| IR-NMR multimodal 177K | IR + NMR | Large paired IR/NMR set with 177,461 IR molecules and 1,255 NMR molecules |
+| SQuIRL | IR | New computed IR library with QM9-scale molecule count |
 | ORNL_AISD-Ex / GDB-9-Ex | UV-Vis excited states | Very large computed UV-Vis resources |
 | ChEMBL IR/Raman extension | IR, Raman | Larger-scale computed IR/Raman resource beyond QM9-style chemistry |
 
@@ -120,9 +134,11 @@ These are especially useful for ML benchmarking and should be tracked separately
 
 - [SDBS](https://sdbs.db.aist.go.jp/)
 - [NIST Chemistry WebBook](https://webbook.nist.gov/chemistry/)
+- [NIST Quantitative IR Database](https://webbook.nist.gov/chemistry/quant-ir/)
 - [nmrshiftdb2](https://nmrshiftdb.nmr.uni-koeln.de/nmrshiftdb/)
 - [HMDB](https://hmdb.ca/w/databases)
 - [BMRB small molecules](https://bmrb.io/data_library/small_molecules.shtml)
+- [NP-MRD](https://np-mrd.org)
 - [MassBank](https://massbank.eu/MassBank/)
 - [MoNA](https://mona.fiehnlab.ucdavis.edu/)
 - [GNPS Spectral Libraries](https://gnps.ucsd.edu/ProteoSAFe/libraries.jsp)
@@ -130,9 +146,13 @@ These are especially useful for ML benchmarking and should be tracked separately
 - [QMe14S paper](https://pubs.acs.org/doi/10.1021/acs.jpclett.5c00839)
 - [QM9NMR](https://moldis-group.github.io/qm9nmr/)
 - [ChEMBL IR/Raman dataset paper](https://www.nature.com/articles/s41597-025-05289-x)
+- [SQuIRL paper](https://www.nature.com/articles/s41597-026-07240-0)
+- [IR-NMR multimodal 177K Zenodo](https://zenodo.org/records/15669242)
 - [API Raman dataset paper](https://www.nature.com/articles/s41597-025-04848-6)
 - [UV/Vis comparative dataset paper](https://www.nature.com/articles/s41597-019-0306-0)
 - [UV-Vis excited-state datasets paper](https://www.nature.com/articles/s41597-023-02408-4)
+- [NMRexp paper](https://www.nature.com/articles/s41597-025-06245-5)
+- [2DNMRGym dataset](https://huggingface.co/datasets/siriusxiao/2DNMRGym)
 
 ## Notes
 

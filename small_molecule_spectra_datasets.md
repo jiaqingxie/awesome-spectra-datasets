@@ -6,6 +6,15 @@
 
 补充说明：上一版更偏向“公开数据库/实验资源/可直接检索的谱图库”，因此把 `QM9S`、`QMe14S`、`QM9NMR` 这类**量化计算 benchmark 家族**写轻了。严格来说，它们是小分子光谱机器学习里非常重要的一条主线，这一版已补入。
 
+这一轮补查后，另外几类高价值漏项也补充进来了，尤其是：
+
+- `SQuIRL`：新的大规模计算 IR 数据集
+- `IR-NMR multimodal 177K`：公开的成规模 `IR + NMR` 计算数据
+- `NMRexp`：目前非常大的实验 NMR 文献抽取库
+- `2DNMRGym`：2D HSQC NMR benchmark
+- `NP-MRD`：自然产物方向的大型 NMR 数据库
+- `NIST Quantitative IR Database`：虽然规模小，但属于高质量定量 IR 参考集
+
 ## 1. 先看结论：最值得优先整理的核心资源
 
 如果你的目标是先搭一个“小分子多谱学数据底座”，建议优先从下面几类开始：
@@ -22,10 +31,15 @@
 | 高 | QMe14S | 比 QM9S 更广的元素和官能团覆盖 | IR, Raman, NMR |
 | 高 | QM9NMR | 大规模小分子 NMR shielding benchmark | NMR |
 | 中高 | ChEMBL IR/Raman 扩展集 | 适合机器学习的大规模计算光谱数据 | IR, Raman |
+| 中高 | IR-NMR multimodal 177K | 大规模成对 IR/NMR 计算数据 | IR, NMR |
+| 中高 | NMRexp | 超大规模实验 NMR 文献抽取数据集 | NMR |
+| 中高 | NP-MRD | 自然产物和生物来源小分子的超大 NMR 数据库 | NMR |
 | 中高 | ORNL_AISD-Ex / GDB-9-Ex | 超大规模 UV-Vis 计算数据 | UV-Vis |
+| 中 | SQuIRL | 新的 QM9 尺度计算 IR 数据集 | IR |
 | 中 | GNPS Public Libraries | 天然产物、药物、小分子社区型 MS/MS 库 | MS/MS |
 | 中 | API Raman dataset (2025) | 药物开发流程里的实验 Raman 小数据集 | Raman |
 | 中 | UV/Vis comparative dataset (2019) | 文献抽取的实验 UV-Vis 峰位和消光系数 | UV-Vis |
+| 中 | 2DNMRGym | 2D HSQC 实验 NMR benchmark | NMR |
 
 ## 2. 多模态核心数据库
 
@@ -156,6 +170,21 @@
 - 适合：按化合物精确查谱、与物性联合验证
 - 备注：对常见小分子覆盖尤其方便
 
+### 3.2.1 NIST Quantitative Infrared Database
+
+- 类型：实验谱图
+- 小分子相关性：中高，主要是挥发性有机小分子
+- 规模：`21` 个 VOC absorption coefficient spectra
+- 特点：
+  - 虽然规模很小，但属于高质量定量 IR 参考数据
+  - 适合做吸收系数、定量分析和高分辨率参考
+- 局限：
+  - 不适合作为通用机器学习训练主库
+  - 化学空间很窄
+- 链接：
+  - 数据库：[NIST Quantitative IR Database](https://webbook.nist.gov/chemistry/quant-ir/)
+  - 说明页：[NIST SRD 79](https://www.nist.gov/mml/csd/chemical-process-and-nuclear-measurements/nist-srd-79-quantitative-infrared-database)
+
 ### 3.3 ChEMBL IR/Raman 扩展集（2025）
 
 - 名称：A Dataset of Raman and Infrared Spectra as an Extension to the ChEMBL
@@ -192,6 +221,39 @@
 - 特点：
   - 比 QM9S 化学空间更宽
   - 更适合作为下一代结构到 IR 的训练集
+
+### 3.6 SQuIRL（2026）
+
+- 名称：Spectral Quantum Chemistry and Infrared Resonance Library (SQuIRL)
+- 类型：计算数据集
+- 小分子相关性：高
+- 模态：IR
+- 规模：`133,885` 个有机分子
+- 特点：
+  - 2026 年新发布的计算 IR 资源
+  - 对 IR-only 建模和基准比较很值得关注
+- 局限：
+  - 只覆盖 IR
+  - 是计算谱，不是实验谱
+- 链接：
+  - 论文：[Scientific Data 2026](https://www.nature.com/articles/s41597-026-07240-0)
+
+### 3.7 IR-NMR multimodal 177K（2025）
+
+- 名称：IR-NMR multimodal computational spectra dataset for 177K patent-extracted organic molecules
+- 类型：计算数据集
+- 小分子相关性：高
+- 模态：IR，附带一部分 NMR
+- 规模：`177,461` 个 IR 分子；`1,255` 个分子带 `1H/13C NMR`
+- 特点：
+  - 明确面向多模态结构解析和谱图预测
+  - IR 规模很大
+- 局限：
+  - Raman 不包含在内
+  - NMR 子集远小于 IR 主体
+- 链接：
+  - 数据集：[Zenodo](https://zenodo.org/records/15669242)
+  - 论文：[Scientific Data 2025](https://www.nature.com/articles/s41597-025-05729-8)
 
 ## 4. Raman 数据集
 
@@ -350,6 +412,23 @@
   - 小分子入口：[BMRB small molecules](https://bmrb.io/data_library/small_molecules.shtml)
   - 代谢物说明：[BMRB metabolomics standards](https://bmrb.io/metabolomics/metabolomics_standards.php)
 
+### 6.4.1 NP-MRD
+
+- 名称：Natural Products Magnetic Resonance Database (NP-MRD)
+- 类型：混合数据库
+- 小分子相关性：中高，聚焦自然产物、代谢物和生物来源小分子
+- 模态：`1H NMR`、`13C NMR`、2D NMR、原始谱和预测谱
+- 规模：2025 更新文章提到约 `281,859` 个化合物、约 `5.5` 百万条 NMR spectra
+- 特点：
+  - 目前自然产物方向非常大的 NMR 数据资源
+  - 同时有实验、预测、raw data 和 2D 数据
+- 局限：
+  - 不完全等同于一般有机小分子数据库
+  - 数据分布偏自然产物和生物来源化学空间
+- 链接：
+  - 主页：[NP-MRD](https://np-mrd.org)
+  - 2025 更新：[PubMed](https://pubmed.ncbi.nlm.nih.gov/39574402/)
+
 ### 6.5 QM9NMR
 
 - 类型：计算数据集
@@ -372,6 +451,41 @@
   - 把 NMR 纳入了更宽化学空间的多谱学 benchmark
   - 对多模态联合学习很有价值
 - 局限：当前最核心价值仍然是 benchmark 与模拟学习，而非实验参考
+
+### 6.7 NMRexp（2025）
+
+- 名称：NMRexp
+- 类型：实验数据集
+- 小分子相关性：高
+- 模态：`1H`、`13C`、`19F`、`31P`、`29Si`、`11B` NMR
+- 规模：`3,372,987` 条 experimental NMR records
+- 来源：从近 `200,000` 份 supporting information 文档中抽取
+- 特点：
+  - 目前公开实验 NMR 数据里非常值得关注的大规模资源
+  - 带有 source DOI traceability
+  - 对结构解析和谱图生成都很有价值
+- 局限：
+  - 主要是文献抽取后的结构化记录，不一定都有原始谱图文件
+  - 使用许可为 `CC BY-NC-ND 4.0`，再利用时需要注意
+- 链接：
+  - 论文：[Scientific Data 2025](https://www.nature.com/articles/s41597-025-06245-5)
+
+### 6.8 2DNMRGym（2025）
+
+- 名称：2DNMRGym
+- 类型：实验数据集
+- 小分子相关性：中高
+- 模态：2D HSQC NMR
+- 规模：`22,000+` 个 annotated HSQC spectra
+- 特点：
+  - 是很适合机器学习的 2D NMR benchmark
+  - 对 atom-level representation learning 很有针对性
+- 局限：
+  - 聚焦 2D HSQC，不是通用 1D NMR 数据库
+  - 更多适合专门的 2D NMR 任务
+- 链接：
+  - 数据集：[Hugging Face](https://huggingface.co/datasets/siriusxiao/2DNMRGym)
+  - 论文：[arXiv 2025](https://arxiv.org/abs/2505.18181)
 
 ## 7. MS 数据集
 
@@ -464,8 +578,11 @@
 | 做 Raman/IR 深度学习 | ChEMBL IR/Raman 扩展集 + SDBS |
 | 做小分子多谱学 benchmark | QM9S + QMe14S |
 | 做实验 Raman 小样本方法学 | API Raman dataset |
+| 做 IR-only 计算 benchmark | SQuIRL + QM9S + IR-NMR 177K |
 | 做 UV-Vis 大规模建模 | ORNL_AISD-Ex / GDB-9-Ex |
 | 做 NMR 计算 benchmark | QM9NMR + QMe14S + nmrshiftdb2 |
+| 做大规模实验 NMR | NMRexp + NP-MRD + nmrshiftdb2 |
+| 做 2D NMR / HSQC 学习 | 2DNMRGym + NP-MRD |
 | 做 UV-Vis 实验峰位任务 | UV/Vis comparative dataset + NIST |
 | 做代谢物方向多模态任务 | HMDB + BMRB + MassBank |
 
@@ -505,8 +622,13 @@
 11. GNPS Public Spectral Libraries
 12. ChEMBL IR/Raman 扩展集
 13. ORNL_AISD-Ex / GDB-9-Ex
+14. IR-NMR multimodal 177K
+15. NMRexp
+16. NP-MRD
+17. SQuIRL
+18. 2DNMRGym
 
-这样可以先把“小分子实验谱 + 计算谱 + 多模态 + benchmark 家族 + 大规模 MS”五个方向都覆盖住。
+这样可以先把“小分子实验谱 + 计算谱 + 多模态 + benchmark 家族 + 大规模 MS + 大规模 NMR”六个方向都覆盖住。
 
 ## 11. 参考链接
 
