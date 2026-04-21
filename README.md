@@ -31,6 +31,9 @@ This repository prioritizes:
 | MassBank | MS/MS | Experimental | Open FAIR reference spectral database |
 | MoNA | MS/MS, GC-MS | Aggregated | Large-scale mass spectral aggregation resource |
 | GNPS Public Libraries | MS/MS | Experimental | Strong for natural products and community workflows |
+| QM9S | IR, Raman, UV-Vis | Computational | Widely used quantum-chemical spectra benchmark on QM9 molecules |
+| QMe14S | IR, Raman, NMR | Computational | Expanded spectral benchmark with 14 elements and broader functional-group coverage |
+| QM9NMR | NMR | Computational | Large atom-resolved NMR shielding dataset for QM9 molecules |
 | ChEMBL IR/Raman extension | IR, Raman | Computational | Large-scale computed spectra for ML |
 | ORNL_AISD-Ex / GDB-9-Ex | UV-Vis | Computational | Large excited-state UV-Vis datasets |
 
@@ -41,10 +44,23 @@ This repository prioritizes:
 ## First Release Plan
 
 - Curate the public small-molecule datasets by modality
+- Separate canonical databases from quantum-chemical benchmark families such as `QM9S`, `QMe14S`, and `QM9NMR`
 - Normalize metadata fields across resources
 - Separate experimental and computational datasets
 - Add download/API/license notes
 - Expand toward benchmark-ready tables
+
+## Important Benchmark Families
+
+These are especially useful for ML benchmarking and should be tracked separately from experimental reference databases:
+
+| Family | Focus | Notes |
+| --- | --- | --- |
+| QM9S | IR, Raman, UV-Vis | Based on QM9; strong baseline for structure-to-spectrum learning |
+| QMe14S | IR, Raman, NMR | Broader chemistry than QM9S with 14 elements and 47 functional groups |
+| QM9NMR | NMR shielding | Atom-level NMR benchmark across 130k+ QM9 molecules |
+| ORNL_AISD-Ex / GDB-9-Ex | UV-Vis excited states | Very large computed UV-Vis resources |
+| ChEMBL IR/Raman extension | IR, Raman | Larger-scale computed IR/Raman resource beyond QM9-style chemistry |
 
 ## Suggested Metadata Schema
 
@@ -71,6 +87,9 @@ This repository prioritizes:
 - [MassBank](https://massbank.eu/MassBank/)
 - [MoNA](https://mona.fiehnlab.ucdavis.edu/)
 - [GNPS Spectral Libraries](https://gnps.ucsd.edu/ProteoSAFe/libraries.jsp)
+- [QM9S dataset](https://figshare.com/articles/dataset/QM9S_dataset/24235333)
+- [QMe14S paper](https://pubs.acs.org/doi/10.1021/acs.jpclett.5c00839)
+- [QM9NMR](https://moldis-group.github.io/qm9nmr/)
 - [ChEMBL IR/Raman dataset paper](https://www.nature.com/articles/s41597-025-05289-x)
 - [API Raman dataset paper](https://www.nature.com/articles/s41597-025-04848-6)
 - [UV/Vis comparative dataset paper](https://www.nature.com/articles/s41597-019-0306-0)
